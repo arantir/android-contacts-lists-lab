@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.badge.BadgeUtils;
+import androidx.annotation.OptIn;
+import com.google.android.material.badge.ExperimentalBadgeUtils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -115,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
         viewModel.onBackPressed();
     }
 
@@ -173,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
         badges.put(R.id.menu_search, createBadge());
     }
 
+    @OptIn(markerClass = ExperimentalBadgeUtils.class)
     private void attachBadges() {
         for (Map.Entry<Integer, BadgeDrawable> entry : badges.entrySet()) {
             BadgeUtils.attachBadgeDrawable(entry.getValue(), binding.toolbar, entry.getKey());

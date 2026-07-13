@@ -1,0 +1,8 @@
+//Собрать APK
+cd ~/1/prj/android/android-contacts-lists-lab && ./gradlew build
+
+//Путь к собранному APK (Debug)
+/home/alexander/1/prj/android/android-contacts-lists-lab/app/build/outputs/apk/debug/app-debug.apk
+
+//Команда для установки APK на устройство/эмулятор
+adb install -r /home/alexander/1/prj/android/android-contacts-lists-lab/app/build/outputs/apk/debug/app-debug.apk
